@@ -29,3 +29,9 @@ Attributes: a key value pair
 
 google fonts:
 https://fonts.google.com/
+
+the box model: properties:
+- content
+- padding: from box inside to text
+- border
+- margin: from box outside
