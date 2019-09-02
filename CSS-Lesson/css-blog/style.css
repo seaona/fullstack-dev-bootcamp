@@ -1,0 +1,19 @@
+/* 
+body: 20px border
+border color: #bdc3c7
+date color: #3498db
+h2 color #2c3e50
+font: source sance pro
+
+hr styles
+*/
+
+
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-left:1,66%;
+	width:30%;
+	border-style: 20px solid #bdc3c7;
+	
+}
