@@ -12,8 +12,27 @@ hr styles
 
 body{
 	font-family: 'Source Sans Pro', sans-serif;
-	margin-left:1,66%;
-	width:30%;
-	border-style: 20px solid #bdc3c7;
-	
+	max-width:700px; /*aixo ho fa responsive. quan la pantalla es gran son 700px, quan no, va al 80%*/
+	width:80%;
+	border: 20px solid #bdc3c7;
+	padding:20px;
+	margin: 20px auto;
+
 }
+
+h2{
+	color: #2c3e50;
+	font-size: 2.0rem;
+}
+
+.date{
+	color:#3498db;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem; /*it's proporcional to its parent*/
+}
+
+.quote{
+	border-left: 5px solid #bdc3c7;
+	padding-left: 5px;
+}
+
