@@ -35,3 +35,9 @@ the box model: properties:
 - padding: from box inside to text
 - border
 - margin: from box outside
+
+
+BOOTSTRAP:
+	- Bootstrap Min: la versio mnimitzada, treient tots els espais. Es el mateix que bootstrap.css
+
+	- Bootstrap CDN (Content Delivery Network): si no ens voleu baixar l'arxiu, podem accedir a la versio hosted, nomes copiant el link
