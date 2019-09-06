@@ -10,6 +10,10 @@ resources for developers
 https://developer.mozilla.org/en-US/
 
 
+font awesome
+https://fontawesome.com/?from=io
+
+
 HTML
 
 target: The target attribute specifies the browsing context which will be used to display the link. For example, target="_blank" will display the link in a new tab. If you want to display the link in the current tab just omit this attribute.
