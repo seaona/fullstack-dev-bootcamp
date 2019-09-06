@@ -10,32 +10,68 @@
 			background: pink;
 			border: 1px solid purple;
 		}
+		.orange{
+			background: orange;
+			border: 1px dashed red;
+			height: 50px;
+		}
 	</style>
 </head>
+
+<!-- in the grid system there are 4 sizes
+		extra small devices (phones)
+		small devices (tablets)
+		medium devices (desktops)
+		large devices (large desktops)
+
+		they sum 12
+-->
 <body>
 	<div class="container">
+		<!--
+		<div class="row">
+			
+			
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>	
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>
+			<div class="col-lg-1 col-md-2 pink">COL LG 1</div>	
+		</div>
+		-->
+		<!-- 3 units out of 12 (25% de la llargada)
+			 6 units out of 12 (50% de la llargada)
+
+			AQUI TENIM LG i MD iguals, llavors per simplificar podem borrar el LG, i quedantse amb el medium, pq bootstrap assumeix q el large es igual q el md
+			-->
+
 
 		<div class="row">
-			<!--sumen 12-->
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>	
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>
-			<div class="col-lg-1 pink">COL LG 1</div>		
-		</div>
-		
-		<div class="row">
-			<!--sumen 12-->
-			<div class="col-lg-2 pink">COL LG 2</div>
-			<div class="col-lg-8 pink">COL LG 8</div>
-			<div class="col-lg-2 pink">COL LG 2</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 pink">
+				<div class="row">
+					<div class="col-lg-6 orange">FIRST HALF</div>
+					<div class="col-lg-6 orange">OTHER HALF</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 pink">TOUR DATE</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 pink">TOUR DATE</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 pink">
+				<div class="row">
+					<div class="col-lg-2 orange"></div>
+					<div class="col-lg-2 orange"></div>
+					<div class="col-lg-2 orange"></div>
+					<div class="col-lg-2 orange"></div>
+					<div class="col-lg-2 orange"></div>
+					<div class="col-lg-2 orange"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 
