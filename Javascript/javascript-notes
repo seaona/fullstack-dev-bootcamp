@@ -2,12 +2,43 @@ JAVASCRIPT
 
 5 PRIMITIVE DATATYPES
 
-- numbers
+- numbers: it doesn't distinguish if it's fractional or negative
+4
+9.3
+-10
 
-- strings
 
-- booleans
+- strings: are always inside quotes (they can be single or double quotes)
+"hello world"
+"42"
+
+*if we want to write double quotes inside the string we can use the ESCAPE CHARACTER \:
+
+	"she said \"goodbye"\to me"
+
+	"To see a backslash: \\"
+
+Properties:
+"hello".length  -->counts the characters, including spaces
+"hello"[0]    	--> returns "h"
+"hello"[4]		-->returns "o"
+
+
+
+- booleans: no quotes
+true
+false
+
 
 - null
+null
+
 
 - undefined
+undefined
+
+
+PRIMITIVES EXERCISE:
+1
+a
+5%3=2
