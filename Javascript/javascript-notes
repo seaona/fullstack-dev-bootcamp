@@ -42,3 +42,15 @@ PRIMITIVES EXERCISE:
 1
 a
 5%3=2
+
+
+VARIABLES
+A variable is a container that has a name on it, and inside stores data.
+They can store all 5 types of primities
+JS Variables should be chamelcase
+
+var variableName=yourValue;
+
+JS IS DINAYMIC TYPING--> a same variable can change from one type to another. i.e.: first string, then number
+	var a="hello";
+	a=3
