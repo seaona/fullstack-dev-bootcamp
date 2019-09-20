@@ -57,3 +57,24 @@ var variableName=yourValue;
 JS IS DINAYMIC TYPING--> a same variable can change from one type to another. i.e.: first string, then number
 	var a="hello";
 	a=3
+
+
+COMMENTS IN JS: 
+//this won't run
+
+
+BUILT-IN METHODS
+*alert("hello there");  
+it pops up a message
+
+*prompt("what is your name");
+forgetting input from the user
+
+we can save the input in a variable:
+
+var userName=prompt("what's your name?");
+
+
+*console.log("sss");
+
+*clear()  it's a method for cleaning the console
