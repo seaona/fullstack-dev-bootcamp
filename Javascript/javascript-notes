@@ -2,13 +2,13 @@ JAVASCRIPT
 
 5 PRIMITIVE DATATYPES
 
-- numbers: it doesn't distinguish if it's fractional or negative
+- NUMBER: it doesn't distinguish if it's fractional or negative
 4
 9.3
 -10
 
 
-- strings: are always inside quotes (they can be single or double quotes)
+- STRING: are always inside quotes (they can be single or double quotes)
 "hello world"
 "42"
 
@@ -25,16 +25,16 @@ Properties:
 
 
 
-- booleans: no quotes
+- BOOLEAN: no quotes
 true
 false
 
 
-- null: it's explicitly empty/nothing
+- NULL: it's explicitly empty/nothing
 null
 
 
-- undefined: if a variable is not initiated with a value it returns
+- UNDEFINED: if a variable is not initiated with a value it returns
 undefined
 
 
@@ -78,3 +78,96 @@ var userName=prompt("what's your name?");
 *console.log("sss");
 
 *clear()  it's a method for cleaning the console
+
+CONTROL FLOW
+if statements
+conditionals
+loops
+
+BOOLEAN LOGIC
+writing statments that evaluate True or False
+
+
+Comparison Operators
+>
+>=
+<
+<=
+==
+!=
+===    	(equal value and type) it's much safer and much more specific
+!==	(not equal value or type)
+
+== uses type coercion --> it transform types trying to be the same format, and then performs the comparision
+
+
+Example:
+
+var y= null;
+y == undefined //true
+y === undefined ///false
+
+
+A few interesting Cases
+true == "1"  		//true
+0 == false		//false
+null == undefined 	//false
+NaN == NaN		//false    (Not a Number)
+
+
+LOGICAL OPERATORS
+assuming x=5 and y=9
+
+&& 	AND	(x<10 && x!==5)		FALSE
+
+||	OR	(y>9 || x === 5)	TRUE
+
+!	NOT	!(x === y)		TRUE
+
+
+TRUTHY AND FALSY VALUES
+Values that aren't actually true or false, are still inherently "Truthy" or "falsey" when evaluated in a boolean context.
+
+i.e.
+!"Hello"	FALSE --> so it's truthy
+
+or !!"Hello"	TRUE --> it's truthy
+
+FALSY VALUES
+- false
+- 0
+- ""
+- null
+- undefined
+- NaN
+
+the rest are all TRUTHY 
+
+CONDITIONALS KEY WORDS
+
+if
+
+else if
+
+else
+
+
+
+typeof xxx -> ens indica el tipus de variable
+
+Number(variable) --> transforma la variable en un numero
+
+
+DRY CODE-> Dont Repeat Yourself
+
+
+
+WHILE LOOPS
+
+
+count++;
+
+count+=2;  --> compta de 2 en 2
+
+
+
