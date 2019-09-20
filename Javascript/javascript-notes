@@ -30,12 +30,15 @@ true
 false
 
 
-- null
+- null: it's explicitly empty/nothing
 null
 
 
-- undefined
+- undefined: if a variable is not initiated with a value it returns
 undefined
+
+
+
 
 
 PRIMITIVES EXERCISE:
