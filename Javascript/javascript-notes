@@ -172,5 +172,22 @@ count+=2;  --> compta de 2 en 2
 as
 
 
+INDEXOF("targetWord") --> aquesta funcio ens diu si un string conte un aparaula. si la conté ens diu el numero de posiciod'inici, si no ens retorna -1
+answer.indexOf("yes")
+
+
+FOR LOOPS
+for(init; condition; step){
+xxxx
+}
+
+
+for(var count=0; countz6; count++{
+console.log(count)
+}
+
+
+* the variable count, only exisits inside the loop
+in comparision to while loops, where we have to initilized before and outside the loop
 
 
