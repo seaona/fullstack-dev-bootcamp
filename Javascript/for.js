@@ -12,7 +12,7 @@ for (var i=10; i<=40; i++){
 
 console.log("3. Print all odd numbers between 300 and 333");
 for (var i=300; i<334; i++){
-	if(i%2!=0){
+	if(i%2!==0){
 		console.log(i);
 	}
 }
