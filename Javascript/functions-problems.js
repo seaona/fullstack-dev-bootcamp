@@ -41,3 +41,5 @@ function kebabToSnake(str){
 
 //using Regular Expressions
 	//var newStr= str.replace(/-/g , "_");
+	//g means global search (all occurrences)
+	//i means to ignore case

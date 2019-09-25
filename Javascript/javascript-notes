@@ -226,16 +226,58 @@ THE RETURN KEYWORD
 input>> function>> output
 
 - we can only write 1 RETURN
-- as soon as it returns something, the function stops
+- it stops the execution of a function: as soon as it returns something, the function stops
+
 
 function square(x){
 return x*x;
 }
 
-
 var result=square(104);
 
 
 
+
+FUNCTION DECLARATION
+function capitalize(str) {
+	return xxx;
+}
+
+
 FUNCTION EXPRESSIONS
+var capitalize = function(str){
+	return xxx;
+}
+
+https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
+
+SCOPE
+scope is the context in that the code is executed
+
+i.e. function doMath(){
+	var x=40;
+}
+
+x is inside the function, so its scope is inside. Outside it doesnt exist. It's undefined
+
+- when we define something outside of the function (in the global scope), we still have access from the inside of the function
+
+- you can change variables from the global scope inside a function and it will affect the global scope
+
+- if we DECLARE the same variable name inside the function, it will only exisit inside, as a new one
+
+
+
+HIGHER ORDER FUNCTIONS: pass functions to other functions
+
+function sing(){
+	console.log("twinkle twinkle...");
+	console.log("how i wonder..");
+}
+
+setInterval(sing, interval);   --> this is one example of a HIGHER ORDER FUNCTION
+
+setInterval(function(){..}, interval)  --> ho podem fer amb funcions anonimes, sense declarar nom
+
+
 
