@@ -191,3 +191,51 @@ console.log(count)
 in comparision to while loops, where we have to initilized before and outside the loop
 
 
+
+FUNCTIONS: let us wrap bits of code up into REUSABLE packages. They are one of the building blocks of JS
+
+1. Declare a function:
+
+	function doSomething() {
+		console.log("hello");
+	}
+
+
+2. Call it:
+	doSomething();
+
+*if you call it without the parenteses (doSomething) it will give you back the function, but IT WON'T RUN THE CODE
+
+
+FUNCTION DECLARATIONS
+	- ARGUMENTS: functions that take inputs
+
+function square(num){
+console.log(num*num);
+}
+
+
+function area (length, width){
+console.log(length*width);
+}
+
+area(9,2);
+
+
+THE RETURN KEYWORD
+input>> function>> output
+
+- we can only write 1 RETURN
+- as soon as it returns something, the function stops
+
+function square(x){
+return x*x;
+}
+
+
+var result=square(104);
+
+
+
+FUNCTION EXPRESSIONS
+
