@@ -281,3 +281,65 @@ setInterval(function(){..}, interval)  --> ho podem fer amb funcions anonimes, s
 
 
 
+ARRAYS
+var friends = ["xx", "xx", "xx];
+
+- Arrays are indexed starting at 0. Every slot has a corresponding number
+friends[1] + " <3 "  friends[2]
+
+- We can update array values
+friends[0] = "yyy";
+
+- We can also add new data
+friends[4]= "new";
+
+*you can add friends[10] and js will make empty spaces from 4-10 and it will be undifined.
+
+- We can initialize an empty array:
+var friends=[];
+var friends= new Array(); //not common
+
+- Arrays can hold any type of data:
+var random=[59, true, "hi", null];
+
+- Arrays have a length property
+var nums=[1,432,5]
+nums.length // 3
+
+
+ARRAY BUILT-IN METHODS
+- PUSH/POP
+PUSH: to add to the end of an array
+
+var colors=["red", "orange", "yellow"];
+colors.push("green");
+
+
+POP: to remove the last item in an array
+colors.pop();
+
+
+
+- SHIFT/UNSHIFT
+UNSHIFT: to add to the front an array
+colors.unshift("indigo");
+
+SHIFT. to remove the first item in an array
+colors.shift();
+
+
+- INDEXOF
+To find the index of an item in an array
+
+colors.indexOf("orange"); // 1
+
+It returns -1 if it's not present
+
+
+
+- SLICE
+To copy parts of an array
+
+var newcolors = colors.slice(1,3); // first arguments is when the slice begin, second is where it ends (not included)
+
+
