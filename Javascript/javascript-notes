@@ -343,3 +343,52 @@ To copy parts of an array
 var newcolors = colors.slice(1,3); // first arguments is when the slice begin, second is where it ends (not included)
 
 
+
+ARRAY ITERATION
+FOR LOOP
+var colors=["red", "blue", "orange"]
+
+for(var i=0; i<color.length; i++){
+	console.log(colors[i]);
+}
+
+
+FOR EACH
+Provides an easy built-in way of iterating over an array: forEach
+arr.forEach(someFunction)
+
+var colors=["red", "blue", "yellow", "green"];
+
+colors.forEach(function(color){ 	
+	console.log(color);
+});
+
+
+/we pass an anonymous function + an argument (color).
+The "color" saves the value of the item of every array and passes it to the function
+it doesnt matter the name "color" we can call it whatever
+
+
+This is how .forEach was designed.
+
+The arguments are in a specific order:
+- The first one represents each element in the array (per loop iteration) that .forEach was called on.
+- The second represents the index of said element.
+- The third represents the array that .forEach was called on (it will be the same for every iteration of the loop).
+
+
+
+You can pass in an anonymous function:
+    [1,2,3].forEach(function(el, i, arr) {
+      console.log(el, i, arr);
+    });
+
+
+Or you can pass in a pre-written, named function.
+    function logNums(el, i, arr) {
+      console.log(el, i, arr);
+    }
+     
+    [1,2,3].forEach(logNums);
+
+
