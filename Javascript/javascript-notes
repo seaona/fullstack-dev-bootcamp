@@ -398,3 +398,17 @@ Or you can pass in a pre-written, named function.
     [1,2,3].forEach(logNums);
 
 
+
+METHODS - THE ARRAY PROTOTYPE
+array.forEach()
+
+
+this: the particular array that we are calling
+
+
+we add myforEach method to the prototype:
+array.prototype.myforEach = function(func){
+	for (var i =0; i <this.length; i++) {
+		func(this[i]);
+}
+}
