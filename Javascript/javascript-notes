@@ -412,3 +412,107 @@ array.prototype.myforEach = function(func){
 		func(this[i]);
 }
 }
+
+
+OBJECTS: a data structure, they can hold any kind of data.
+In some languages, Objects are called Dictionaries.
+
+I.e. : I want to model a single person: name, age and city
+
+I could use an array
+var person = ["cindy", 32, "missoula"];
+
+To receive a person's hometown:
+person[2];		//this is not very meaningful
+
+What if I accidentally reverse the order?
+
+var person2= ["travis", "los angeles", 21]
+
+
+THis is a perfect usecase for an OBJECT
+
+var person = {
+	name: "Cindy",
+	age: 32,
+	city: "Missoula"
+};
+
+- every item in the object is a key-value pair
+- unlike arrays, objects have no order
+
+
+OBJECTS: RETRIEVING DATA:
+2 choices: 
+
+Braket: 
+console.log(person["name]);
+
+you can look up using a variable with bracket notation
+var str= name;
+someObject[str];
+someObject.str; --> doesn't work
+
+
+Dot notation: 
+console.log(person.name);
+you cannot use it if the property starts with a number, or if has spaces inbetween
+
+
+OBJECTS: UPDATING DATA
+
+person["age"] +=1;
+
+person.city="london";
+
+
+OBJECTS: CREATING OBJECTS
+1. make an empty object and then add to it
+
+var person = {};
+
+person.name="travis";
+person.age=21;
+person.city="la";
+
+
+2. all at once
+
+var person = {
+	name: "travis",
+	age: 21,
+	city: "la"
+};
+
+
+3. another way of initializing an object
+
+var person = new Object();
+
+person.name="travis";
+person.age=21;
+person.city="la";
+
+
+
+NESTED OBJECTS OR ARRAYS
+var posts = [
+	{
+	  title: "cats are mediocre",
+	  author: "colt",
+	  comments: ["awesome post", "terrible post"]
+	},
+
+	{
+	  title: "cats are awesome",
+	  author: "cat lover",
+	  comments: [">3", "shut up"]
+	}
+
+]
+
+posts[0].title // cats are mediocre
+posts[1].comments[1] // shut up
+
+
+
