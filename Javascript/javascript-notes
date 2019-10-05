@@ -516,3 +516,60 @@ posts[1].comments[1] // shut up
 
 
 
+JS METHODS
+A method is just a function that is a property inside an object
+var obj = {
+	name: "mar",
+	age: 40,
+	isCool: true,
+	add: function (x,y){
+		return x+y;
+		}
+}
+
+obj.add(5,3);		// 8
+
+
+ie. console.log()
+console is an object and log is a method inside that object
+
+ADDING METHODS TO OBJECTS
+i.e.
+function speak(){
+	return "WOOF";
+	}
+
+function speak(){
+	return "MEOW";
+	}
+
+we have namspace collision!!! So the solution is;
+
+var dogSpace = {};
+dogSpace.speak = function() {
+	return "WOOF";
+	};
+
+var catSpace = {};
+catSpace.speak = function() {
+	return "MEOW";
+	};
+
+dogSpace.speak();  // WOOF
+catSpace.speak();  // MEOW
+
+
+
+
+NAMESPACING
+To avoid namespace collision (functions with the same names)
+
+
+
+THE KEYWORD <<THIS>>
+Underscore JS is a library that provides useful functional programming helpers without extending any built-in objects.
+Functional helpers: map, filter, invoke, creating indexes, js templating, function binding...
+
+Test Suit is included.
+
+

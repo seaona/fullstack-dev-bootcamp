@@ -13,12 +13,16 @@ while(count<4){
 	count++;
 }
 
-movieDB.forEach(function(movie){
+function buildString(movie){
 	if(movie.hasWatched==="y"){
-		console.log("You have watched " + movie.title + " - " + movie.rating);
+		var result="You have watched " + movie.title + " - " + movie.rating;
 	}
 	else{
-		console.log("You have not watched " + movie.title + " - " + movie.rating);
+		var result="You have not watched " + movie.title + " - " + movie.rating;
 	}
+	return result;
+}
 
+movieDB.forEach(function(movie){
+	console.log(buildString(movie));
 });
