@@ -602,10 +602,6 @@ comments.print = function() {
 }
 
 
-INTRO TO THE DOM
-Document Object Model: the DOM is the interface between your JS and HTML + CSS
 
-The browser turns every HTML tag into a JS object that we can manippulate.
-Everything is stored inside of the document object.
 
-console.dir(document);   //it will print all the DOM
+

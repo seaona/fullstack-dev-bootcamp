@@ -1,0 +1,35 @@
+INTRO TO THE DOM
+Document Object Model: the DOM is the interface between your JS and HTML + CSS
+
+The browser turns every HTML tag into a JS object that we can manippulate.
+Everything is stored inside of the document object.
+
+console.dir(document);   //it will print all the DOM
+
+
+THE PROCESS
+SELECT an element and then MANIPULATE
+
+
+var h1 = document.querySelector("h1");	//select <h1>
+
+h1.style.color= "pink"; 	// style property and we change color property inside style
+
+
+document.URL
+document.body
+document.head
+
+
+
+IMPORTANT SELECTOR METHODS
+
+document.getElementById()
+
+document.getElementByClassName()
+
+document.getElementsByTagName()
+
+document.querySelector()
+
+document.querySelectorAll()
