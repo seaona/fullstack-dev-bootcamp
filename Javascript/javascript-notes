@@ -566,10 +566,38 @@ To avoid namespace collision (functions with the same names)
 
 
 
-THE KEYWORD <<THIS>>
+
+
+UNDERSCORE JS LIBRARY
 Underscore JS is a library that provides useful functional programming helpers without extending any built-in objects.
 Functional helpers: map, filter, invoke, creating indexes, js templating, function binding...
 
 Test Suit is included.
 
+you call it with   _.   :
+
+var flat = _.find([1,2])
+
+
+
+THE KEYWORD <<THIS>>
+this: inside a method it refers to the OBJECT that the method is defining
+
+var comments = {};
+comments.data = ["dd", "jksjdf", "jfks"];
+
+
+OPTION 1:
+function print(arr){
+	arr.forEach(function(el){
+		console.log(el);
+	});
+}
+
+OPTION 2:
+comments.print = function() {
+	this.data.forEach(function(el){   //this refers to comments
+	console.log(el);
+	});
+}
 
