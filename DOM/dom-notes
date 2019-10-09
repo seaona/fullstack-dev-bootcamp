@@ -33,3 +33,85 @@ document.getElementsByTagName()
 document.querySelector()
 
 document.querySelectorAll()
+
+
+
+DOM MANIPULATION
+CHANGING AN ELEMENT'S STYLE
+The STYLE property is one way to manipulate an element's style.
+
+
+var tag = document.getElementById("highlight");
+
+tag.style.color = "blue";
+tag.style.border = "10px solid red";
+tag.style.fontSize = "70px";
+tag.style.background = "yellow";
+tag.style.marginTop = "200px";
+
+
+//it's not very DRY code.
+Separation of Concerns: it is recommended for styles to be defined in a separate file or files. The style property allows for quick styling.
+In that case, we should give tag another class, i.e. itsHighglighted, and then on the CSS style the class. So in JS we only have 1 line of code.
+
+//ALTERNATIVE
+
+//define a class in CSS
+.some-class {
+	color: blue;
+	border: 10px solid red;
+}
+
+//select the element
+var tag = document.getElementByID("highlight");
+
+//add the new clas to the selected element
+tag.classList.add("some-class");
+
+
+
+ADDING/REMOVING CLASSES
+classList: a read-only list that contains the classes for a given element. It's NOT an array.
+
+var tag = document.querySelector("h1");
+
+//add a class to the selected element
+tag.clasSList.add("another-class");
+
+//remove a class
+tag.classList.remove("another-class");
+
+//toggle a class: if the element has that class it will remove it. If not, turn it on
+tag.classList.toggle("another-class");
+
+
+
+
+CHANGING THE CONTENT OF A TAG
+textContent: returns a strnig of all the text contained in a given element
+
+<p>this is an <strong> awesome</strong> paragraph</p>
+
+var tag = document.querySelector("p");
+
+tag.textContent  //"this is an awesome paragraph"
+
+tag.textContent = "blah blah"  //we change now the text content
+
+
+
+
+innerHTML: similar to textContent, except it returns a string of all the HTML contained in a given element
+
+tag.innerHTML  /// "This is an <strong>awesome</strong> paragraph"
+
+
+
+
+tag.textContent = "<h1>goobye</h1>"   // text content is not going to treat h1 as html
+tag.innerHTML = "<h1>goobye</h1>" //innerHTML treats h1 as html
+
+
+CHANGING ATTRIBUTES (SRC, HREF, ETC.)
+
+

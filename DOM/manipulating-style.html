@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Demo</title>
+	<style type="text/css">
+		.big {
+			font-size: 100px;
+			color: orange;
+			border: 10px solid red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to my DOM Demo</h1>
+
+	<p>Corgi mixes are <strong>super </strong>adorable</p>
+
+	<ul>
+		<li>Orchids</li>
+		<li>Suculents</li>
+		<li>Tulips</li>
+	</ul>
+
+	<script type="text/javascript">
+		var tag = document.querySelector("p");
+
+		//tag.classList.add("big");
+		//tag.classList.remove("big");
+		//tag.classList.toggle("big");
+
+		var p = document.getElementsByTagName("p")[0];
+			p.textContent; //shows all the text
+
+		var ul = document.querySelector("ul");
+		ul.textContent;
+
+		p.innerHTML; // corgies ara <strong>ddd</strong>xxx
+
+	</script>
+</body>
+</html>
