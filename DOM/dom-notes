@@ -150,3 +150,31 @@ console.log(links[i].getAttribute=("href"); ///for showing all text
 for(var i=0; i<links.length; i++){
 links[i].setAttribute=("href", );
 }
+
+
+DOM Events
+Making things interactive. Events are everywhere:
+	- clicking on a button
+	- hovering over a link
+	- dragging and dropping
+	- pressing the enter key
+
+
+The process: we select an element and then add an EVENT LISTENER
+
+"listen for a click on this <button>"
+"listen for a hover event on the <h1>"
+"listen for a keypress event on the text input"
+
+The syntax: we use a method called addEventListener
+
+element.addEventListener(type, functionToCall);
+
+var button = document.querySelector("button");
+button addEventListener("click", function() {
+	console.log("Someone clicked the button");
+});
+
+
+
+debugger

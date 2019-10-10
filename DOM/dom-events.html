@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Events</title>
+</head>
+<body>
+	<button>Click me</button>
+	<p>No one has clicked me yet</p>
+
+	<script type="text/javascript">
+		var button = document.querySelector("button");
+		var paragraph = document.querySelector("p");
+
+		button.addEventListener("click",function(){
+			paragraph.textContent = "someone clicked me";
+		})
+	</script>
+
+</body>
+</html>
