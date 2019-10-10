@@ -113,5 +113,40 @@ tag.innerHTML = "<h1>goobye</h1>" //innerHTML treats h1 as html
 
 
 CHANGING ATTRIBUTES (SRC, HREF, ETC.)
+getAttribute() and setAttribute() to read and write attributes like src or href.
+
+setAttribute() only works for individual elements
+
+<a href="www.google.com">I am a link </a>
+<img src="logo.png">
+
+var link = document.querySelector("a");
+
+link.getAttribute("href");	//wwww.google.com
+link.setAttribute("href", "www.dogs.com");
+
+var img = document.querySelector("img");
+img.setAttribute("src", "corgi.png");
 
 
+*in google, change src for srcset
+
+
+EXAMPLE: GET GOOGLE LINKS AND CHANGE THEM
+var links = document.getElementsByTagName("a");
+
+for(var i=0; i<links.length; i++){
+console.log(links[i].textContent);  ///show all the text
+}
+
+for(var i=0; i<links.length; i++){
+links[i].style.background="pink";   ///change style
+}
+
+for(var i=0; i<links.length; i++){
+console.log(links[i].getAttribute=("href"); ///for showing all text
+}
+
+for(var i=0; i<links.length; i++){
+links[i].setAttribute=("href", );
+}
