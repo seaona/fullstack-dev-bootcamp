@@ -16,7 +16,7 @@
 		
 
 		input.addEventListener("change", function(){
-			playingTo = Number(this.value);
+			playingTo = Number(this.value); //this referts to whatever the event was listening on
 			countP1=0;
 			countP2=0;
 			max.textContent = playingTo;

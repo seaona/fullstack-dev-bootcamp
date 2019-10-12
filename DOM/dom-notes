@@ -178,3 +178,25 @@ button addEventListener("click", function() {
 
 
 debugger
+
+MOUSEOVER/MOUSEOUT
+
+mouseover: when mouse is over a component
+mouseout: when the mouse is out a component
+
+
+
+MDN EVENT REFERENCE
+https://developer.mozilla.org/es/docs/Web/Events
+
+
+
+HOW MANY EVENTS ARE?
+1. open console
+2. document.querySelectorAll("table"); // check if all the tables are related to events
+3. select all the tables rows and count the lengt:
+
+var numberEvents = document.querySelectorAll("tr");
+var numberTables=document.querySelectorAll("table"); //we will substract the firts row
+
+console.log(numberEvents.length - numberTables.length););
