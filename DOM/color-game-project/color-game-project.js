@@ -9,10 +9,12 @@ var pickedColor = pickColor();
 var easyBtn = document.getElementById("easyBtn");
 var hardBtn = document.getElementById("hardBtn");
 
-
 startGame();
 
 function startGame(){
+	colors = generateRandomColors(difficulty);
+	pickedColor = pickColor();
+	//display color code in title
 	colorDisplay.textContent= pickedColor;
 	for(var i=0; i<difficulty; i++){
 	//add initial colors to squares
@@ -60,42 +62,39 @@ function randomColor(){
 	var red = Math.floor(Math.random()*256);
 	var green = Math.floor(Math.random()*256);
 	var blue = Math.floor(Math.random()*256);
-
 	return "rgb("+red+", "+green+", "+blue+")";	
 }
 
+
 function resetGame(){
-	reset.addEventListener("click", function(){
-		reset.textContent="New Colors";
-		h1.style.backgroundColor="#232323";
-		colors = generateRandomColors(difficulty);
-		pickedColor = pickColor();
-		if(easyBtn.classList=="selected"){
-			squares[3].style.backgroundColor="#232323";
-			squares[4].style.backgroundColor="#232323";
-			squares[5].style.backgroundColor="#232323";
-		}
-		
-	});
-	startGame();
+	reset.textContent="New Colors";
+	h1.style.backgroundColor="#232323";
+	if(easyBtn.classList=="selected"){
+		squares[3].style.backgroundColor="#232323";
+		squares[4].style.backgroundColor="#232323";
+		squares[5].style.backgroundColor="#232323"
+		difficulty=3;
+		startGame();
+	}
+	else{
+		difficulty=6;
+		startGame();
+	}	
 };
 
+reset.addEventListener("click", resetGame);
 
 easyBtn.addEventListener("click", function(){
 	easyBtn.classList.add("selected");
 	hardBtn.classList.remove("selected");
-	difficulty=3;
-	squares[3].style.backgroundColor="#232323";
-	squares[4].style.backgroundColor="#232323";
-	squares[5].style.backgroundColor="#232323";
 	resetGame();
-
+	
 });
 
 
 hardBtn.addEventListener("click", function(){
 	hardBtn.classList.add("selected");
 	easyBtn.classList.remove("selected");
-	difficulty=6;
 	resetGame();
+	
 });

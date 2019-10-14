@@ -168,12 +168,32 @@ The process: we select an element and then add an EVENT LISTENER
 
 The syntax: we use a method called addEventListener
 
-element.addEventListener(type, functionToCall);
+element.addEventListener(type, functionToCall); 
 
 var button = document.querySelector("button");
 button addEventListener("click", function() {
 	console.log("Someone clicked the button");
 });
+
+OR:
+
+button addEventListener("click", alertMessage);
+
+//here it goes WITHOUT PARENTHESIS. OTHERWISE WWE WOUDL EXECUTE IT AT THE BEGINING OF LOADING THE PAGE. IF WE NEED TO PASS A PARAMETER WE SHOULD USE AN ANONIMOUS FUNCTION AND NEST INSIDE A CALLBACK FUNCTION
+
+//we declare the function
+function alertMessage(message){
+	console.log(message);
+}
+
+button addEventListener("click", function(){
+	alertMessage("hello");
+}
+
+
+
+
+
 
 
 
