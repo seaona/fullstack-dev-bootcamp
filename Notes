@@ -45,3 +45,28 @@ BOOTSTRAP:
 	- Bootstrap Min: la versio mnimitzada, treient tots els espais. Es el mateix que bootstrap.css
 
 	- Bootstrap CDN (Content Delivery Network): si no ens voleu baixar l'arxiu, podem accedir a la versio hosted, nomes copiant el link
+
+
+button {
+height: 100%;} //takes 100 of all the div
+
+
+//span takes 20% of the screen
+span{
+	display: inline-block;
+	width: 20%;
+}
+
+
+transition: all 2.0s; // whenever ANY property changes, we transition in 2 scs it will take to secs to change the properties
+
+transition: background 0.6s; //when background color changes, it will take 0.6 secs
+
+SOMETIMES TRANSITIONS DOESNT WORK IN ALL BROWSERS SO WE HAVE TO SPECIFY:
+	transition: background 0.6s;
+	-webkit-transition: background 0.6s;
+	-moz-transition:background 0.6s;
+
+
+MARING
+margin: 20px auto;  //is 20px in top and bottom and auto in left_-right (center)

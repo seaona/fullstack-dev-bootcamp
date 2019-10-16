@@ -220,3 +220,29 @@ var numberEvents = document.querySelectorAll("tr");
 var numberTables=document.querySelectorAll("table"); //we will substract the firts row
 
 console.log(numberEvents.length - numberTables.length););
+
+
+NEW NOMENCLATURE: TERNARY OPERATOR: condition ? IDoThat: elseIDoThat
+if(this.textContent==="Easy"){
+	numSquares=3;
+}
+else{
+	numSquares=6;
+}
+
+//the same as:
+this.textContent==="Easy" ? numSquares=3: numSquares =6;
+	CONDITION      THEN     XXX     ELSE   XX
+
+
+STRUCTURE CODE: the most common way is to structure it into OBJECTS, and not having functions or variables floating around. It would be
+
+var = game {}
+
+game.init = function(){
+	setUpMode();
+	setupSquares();
+	reset();
+}
+
+game.init();
