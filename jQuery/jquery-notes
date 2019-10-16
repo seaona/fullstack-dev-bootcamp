@@ -1,0 +1,34 @@
+JQUERY
+It's a DOM manipulation library.
+	- select elements
+	- manipulate elements
+	- create elements
+	- add event listeners
+	- animate elements
+	- add effects
+	- make http requests (AJAX)
+
+
+WHY USE JQUERY
+- fixes "broken" DOM API
+- brevity and clarity
+- ease of use
+- cross-browser support
+- ajax
+
+
+WHY NOT USE JQUERY
+youmightnotneedjquery.com
+- the DOM API is no longer broken
+- it doesn't do anything you can do on your own
+- it's an unnecessary dependency
+- performance
+
+VANILLA JS: It's just writting Javascript WITHOUT jQuery
+
+ADDING JQUERY
+download jQuery and link it locally
+compressed version (minimized version) or uncompressed
+
+link to a CDN (a hosted copy)
+Content Distributed  Network
