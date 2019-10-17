@@ -54,3 +54,39 @@ $("#bonus")
 
 //select all a tags inside li's
 $("li a")
+
+
+METHOD .CSS
+$(selector).css(property, value)
+
+$("#special").css("color", "yellow")
+the same as:
+document.querySelector("h1").style.color = "orange";
+
+we can also define our styles in an object
+
+var styles = {
+	backgroundColor: "pink",
+	fontWeight: "bold"
+};
+
+$("#special").css(styles);
+
+We can also style multiple elements at once
+//select all li's
+$("li").css("color", "yellow");
+
+the same as:
+var lis = document.querySelectorAll("li");
+for (var i=0; i < lis.length; i++){
+	lis[i].style.color = "yellow";
+}
+
+or passs directly an object with sytles
+
+$("li").css({
+fontSize: "10px",
+border: "3px solid red",
+background: "purple"
+
+})
