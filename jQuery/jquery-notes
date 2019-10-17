@@ -32,3 +32,25 @@ compressed version (minimized version) or uncompressed
 
 link to a CDN (a hosted copy)
 Content Distributed  Network
+
+
+
+JQUERY SELECTORS
+$("selectorGoesHere") it's the same as querySelectorAll, in that we provide a CSS style selector and jQuery will return all matching elements
+
+$  is a function
+
+function(selector, context){}
+it returns a list
+
+//select all img tags
+$("img")
+
+//select all elements with class sale
+$(".sale")
+
+//select element with id bonus
+$("#bonus")
+
+//select all a tags inside li's
+$("li a")
