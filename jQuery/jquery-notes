@@ -94,3 +94,23 @@ background: "purple"
 
 change only the first div:
 $("div:first-of-type").css("color", "pink");
+
+COMMONM JQUERY METHODS
+- val()
+
+- text()
+it returns the content of sth
+$("h1").text("change h1text!")
+
+- attr()
+
+- html()
+$("ul").html("<li>jj</li><li>hjkj</li>")
+it gives the inner htmnl, not only the text
+
+
+- addClass()
+
+- removeClass()
+
+- toggleClass()
