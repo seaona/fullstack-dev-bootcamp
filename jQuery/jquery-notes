@@ -90,3 +90,7 @@ border: "3px solid red",
 background: "purple"
 
 })
+
+
+change only the first div:
+$("div:first-of-type").css("color", "pink");
