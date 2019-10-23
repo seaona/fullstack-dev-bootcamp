@@ -97,12 +97,40 @@ $("div:first-of-type").css("color", "pink");
 
 COMMONM JQUERY METHODS
 - val()
+get the current value of the first element in the set of matched elements or set the value of every matched element
+$("input").val("mariona") -->we pass th value mariona
+ 
 
 - text()
 it returns the content of sth
 $("h1").text("change h1text!")
 
 - attr()
+get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element
+<img id="photo" src="brusch.jpg" alt="brush seller">
+
+Getter: we receive the value of the attribute:
+$("img").attr("src")
+
+
+Setter: we change the value of an attribute:
+$("img").attr("src", "xxx,jpg")
+
+
+or
+$("#photo).attr({
+	alt: "beijing seller",
+	title: "photo of beijing"
+});
+
+
+from alist of several images, if i want to change the first:
+$("img:first-of-type").css("", "")
+last one:
+$("img").last().css("", "")
+all
+$("img").css("", "")
+
 
 - html()
 $("ul").html("<li>jj</li><li>hjkj</li>")
