@@ -70,3 +70,5 @@ SOMETIMES TRANSITIONS DOESNT WORK IN ALL BROWSERS SO WE HAVE TO SPECIFY:
 
 MARING
 margin: 20px auto;  //is 20px in top and bottom and auto in left_-right (center)
+
+xxx
