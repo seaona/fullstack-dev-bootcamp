@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors Exercice</title>
+</head>
+<body>
+	<h1>I am an h1</h1>
+
+	<p id="first" class="special">Hello</p>
+	<p class="special">Goodbye</p>
+	<p>Hi again</p>
+	<p id="last">Goodbye again</p>
+
+
+	<script type="text/javascript">
+		var firstParagraph = document.getElementById("first");
+
+		var firstParagraph2 = document.getElementsByClassName("special")[0];
+
+		var firstParagraph3 = document.getElementsByTagName("p")[0];
+
+		var firstParagraph4 = document.querySelector("#first");
+
+		var firstParagraph4 = document.querySelector(".special"); //it only gives us the first result
+
+		var firstParagraph5 = document.querySelector("p");
+
+		var firstParagraph6 = document.querySelectorAll("p")[0];
+
+		var firstParagraph7 = document.querySelectorAll(".special")[0];
+
+		var firstParagraph8 = document.querySelector("h1 + p");
+
+	</script>
+</body>
+</html>

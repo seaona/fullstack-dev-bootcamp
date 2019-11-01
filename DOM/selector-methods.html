@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The DOM: Important Selectors Methods</title>
+</head>
+<body>
+	<h1>Hello</h1>
+	<h1>Goodbye</h1>
+
+	<ul>
+		<li id="highlight">List Item 1</li>
+		<li class="bolded">List Item 2</li>
+		<li class="bolded">List Item 3</li>
+	</ul>
+
+	<script type="text/javascript">
+		var tag = document.getElementById("highlight");
+
+		var tags = document.getElementsByClassName("bolded");    //it returns an OBJECT not an ARRAY
+
+		var tags2 = document.getElementsByTagName("li");
+
+		var tags3 = document.querySelector("#highlight");	//selects by ID. Returns the 1st element that matches a given CSS-style selector --> only returns 1 Element
+
+		var tags4 = document.querySelector(".bolded");	//selects by class. Returns the 1st element that matches a given CSS-style selector --> only returns 1 Element
+
+		var tags5 = document.querySelector("h1");	//selects by ID. Returns the 1st element that matches a given CSS-style selector --> only returns 1 Element
+
+
+		var tags6 = document.querySelectorAll("h1"); 	//it returns ALL the elements
+
+	</script>
+
+</body>
+</html>

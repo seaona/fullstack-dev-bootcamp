@@ -1,0 +1,607 @@
+JAVASCRIPT
+
+5 PRIMITIVE DATATYPES
+
+- NUMBER: it doesn't distinguish if it's fractional or negative
+4
+9.3
+-10
+
+
+- STRING: are always inside quotes (they can be single or double quotes)
+"hello world"
+"42"
+
+*if we want to write double quotes inside the string we can use the ESCAPE CHARACTER \:
+
+	"she said \"goodbye"\to me"
+
+	"To see a backslash: \\"
+
+Properties:
+"hello".length  -->counts the characters, including spaces
+"hello"[0]    	--> returns "h"
+"hello"[4]		-->returns "o"
+
+
+
+- BOOLEAN: no quotes
+true
+false
+
+
+- NULL: it's explicitly empty/nothing
+null
+
+
+- UNDEFINED: if a variable is not initiated with a value it returns
+undefined
+
+
+
+
+
+PRIMITIVES EXERCISE:
+1
+a
+5%3=2
+
+
+VARIABLES
+A variable is a container that has a name on it, and inside stores data.
+They can store all 5 types of primities
+JS Variables should be chamelcase
+
+var variableName=yourValue;
+
+JS IS DINAYMIC TYPING--> a same variable can change from one type to another. i.e.: first string, then number
+	var a="hello";
+	a=3
+
+
+COMMENTS IN JS: 
+//this won't run
+
+
+BUILT-IN METHODS
+*alert("hello there");  
+it pops up a message
+
+*prompt("what is your name");
+forgetting input from the user
+
+we can save the input in a variable:
+
+var userName=prompt("what's your name?");
+
+
+*console.log("sss");
+
+*clear()  it's a method for cleaning the console
+
+CONTROL FLOW
+if statements
+conditionals
+loops
+
+BOOLEAN LOGIC
+writing statments that evaluate True or False
+
+
+Comparison Operators
+>
+>=
+<
+<=
+==
+!=
+===    	(equal value and type) it's much safer and much more specific
+!==	(not equal value or type)
+
+== uses type coercion --> it transform types trying to be the same format, and then performs the comparision
+
+
+Example:
+
+var y= null;
+y == undefined //true
+y === undefined ///false
+
+
+A few interesting Cases
+true == "1"  		//true
+0 == false		//false
+null == undefined 	//false
+NaN == NaN		//false    (Not a Number)
+
+
+LOGICAL OPERATORS
+assuming x=5 and y=9
+
+&& 	AND	(x<10 && x!==5)		FALSE
+
+||	OR	(y>9 || x === 5)	TRUE
+
+!	NOT	!(x === y)		TRUE
+
+
+TRUTHY AND FALSY VALUES
+Values that aren't actually true or false, are still inherently "Truthy" or "falsey" when evaluated in a boolean context.
+
+i.e.
+!"Hello"	FALSE --> so it's truthy
+
+or !!"Hello"	TRUE --> it's truthy
+
+FALSY VALUES
+- false
+- 0
+- ""
+- null
+- undefined
+- NaN
+
+the rest are all TRUTHY 
+
+CONDITIONALS KEY WORDS
+
+if
+
+else if
+
+else
+
+
+
+typeof xxx -> ens indica el tipus de variable
+
+Number(variable) --> transforma la variable en un numero
+
+
+DRY CODE-> Dont Repeat Yourself
+
+
+
+WHILE LOOPS
+
+
+count++;
+
+count+=2;  --> compta de 2 en 2
+
+as
+
+
+INDEXOF("targetWord") --> aquesta funcio ens diu si un string conte un aparaula. si la conté ens diu el numero de posiciod'inici, si no ens retorna -1
+answer.indexOf("yes")
+
+
+FOR LOOPS
+for(init; condition; step){
+xxxx
+}
+
+
+for(var count=0; countz6; count++{
+console.log(count)
+}
+
+
+* the variable count, only exisits inside the loop
+in comparision to while loops, where we have to initilized before and outside the loop
+
+
+
+FUNCTIONS: let us wrap bits of code up into REUSABLE packages. They are one of the building blocks of JS
+
+1. Declare a function:
+
+	function doSomething() {
+		console.log("hello");
+	}
+
+
+2. Call it:
+	doSomething();
+
+*if you call it without the parenteses (doSomething) it will give you back the function, but IT WON'T RUN THE CODE
+
+
+FUNCTION DECLARATIONS
+	- ARGUMENTS: functions that take inputs
+
+function square(num){
+console.log(num*num);
+}
+
+
+function area (length, width){
+console.log(length*width);
+}
+
+area(9,2);
+
+
+THE RETURN KEYWORD
+input>> function>> output
+
+- we can only write 1 RETURN
+- it stops the execution of a function: as soon as it returns something, the function stops
+
+
+function square(x){
+return x*x;
+}
+
+var result=square(104);
+
+
+
+
+FUNCTION DECLARATION
+function capitalize(str) {
+	return xxx;
+}
+
+
+FUNCTION EXPRESSIONS
+var capitalize = function(str){
+	return xxx;
+}
+
+https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
+
+SCOPE
+scope is the context in that the code is executed
+
+i.e. function doMath(){
+	var x=40;
+}
+
+x is inside the function, so its scope is inside. Outside it doesnt exist. It's undefined
+
+- when we define something outside of the function (in the global scope), we still have access from the inside of the function
+
+- you can change variables from the global scope inside a function and it will affect the global scope
+
+- if we DECLARE the same variable name inside the function, it will only exisit inside, as a new one
+
+
+
+HIGHER ORDER FUNCTIONS: pass functions to other functions
+
+function sing(){
+	console.log("twinkle twinkle...");
+	console.log("how i wonder..");
+}
+
+setInterval(sing, interval);   --> this is one example of a HIGHER ORDER FUNCTION
+
+setInterval(function(){..}, interval)  --> ho podem fer amb funcions anonimes, sense declarar nom
+
+
+
+ARRAYS
+var friends = ["xx", "xx", "xx];
+
+- Arrays are indexed starting at 0. Every slot has a corresponding number
+friends[1] + " <3 "  friends[2]
+
+- We can update array values
+friends[0] = "yyy";
+
+- We can also add new data
+friends[4]= "new";
+
+*you can add friends[10] and js will make empty spaces from 4-10 and it will be undifined.
+
+- We can initialize an empty array:
+var friends=[];
+var friends= new Array(); //not common
+
+- Arrays can hold any type of data:
+var random=[59, true, "hi", null];
+
+- Arrays have a length property
+var nums=[1,432,5]
+nums.length // 3
+
+
+ARRAY BUILT-IN METHODS
+- PUSH/POP
+PUSH: to add to the end of an array
+
+var colors=["red", "orange", "yellow"];
+colors.push("green");
+
+
+POP: to remove the last item in an array
+colors.pop();
+
+
+
+- SHIFT/UNSHIFT
+UNSHIFT: to add to the front an array
+colors.unshift("indigo");
+
+SHIFT. to remove the first item in an array
+colors.shift();
+
+
+- INDEXOF
+To find the index of an item in an array
+
+colors.indexOf("orange"); // 1
+
+It returns -1 if it's not present
+
+
+
+- SLICE
+To copy parts of an array
+
+var newcolors = colors.slice(1,3); // first arguments is when the slice begin, second is where it ends (not included)
+
+
+- SPLICE
+to delete some specific elements of an array
+
+arrayName.splice(index, 1);    //firs argument is the index where we start deleting, second argument is the number of items deleted
+
+
+
+ARRAY ITERATION
+FOR LOOP
+var colors=["red", "blue", "orange"]
+
+for(var i=0; i<color.length; i++){
+	console.log(colors[i]);
+}
+
+
+FOR EACH
+Provides an easy built-in way of iterating over an array: forEach
+arr.forEach(someFunction)
+
+var colors=["red", "blue", "yellow", "green"];
+
+colors.forEach(function(color){ 	
+	console.log(color);
+});
+
+
+/we pass an anonymous function + an argument (color).
+The "color" saves the value of the item of every array and passes it to the function
+it doesnt matter the name "color" we can call it whatever
+
+
+This is how .forEach was designed.
+
+The arguments are in a specific order:
+- The first one represents each element in the array (per loop iteration) that .forEach was called on.
+- The second represents the index of said element.
+- The third represents the array that .forEach was called on (it will be the same for every iteration of the loop).
+
+
+
+You can pass in an anonymous function:
+    [1,2,3].forEach(function(el, i, arr) {
+      console.log(el, i, arr);
+    });
+
+
+Or you can pass in a pre-written, named function.
+    function logNums(el, i, arr) {
+      console.log(el, i, arr);
+    }
+     
+    [1,2,3].forEach(logNums);
+
+
+
+METHODS - THE ARRAY PROTOTYPE
+array.forEach()
+
+
+this: the particular array that we are calling
+
+
+we add myforEach method to the prototype:
+array.prototype.myforEach = function(func){
+	for (var i =0; i <this.length; i++) {
+		func(this[i]);
+}
+}
+
+
+OBJECTS: a data structure, they can hold any kind of data.
+In some languages, Objects are called Dictionaries.
+
+I.e. : I want to model a single person: name, age and city
+
+I could use an array
+var person = ["cindy", 32, "missoula"];
+
+To receive a person's hometown:
+person[2];		//this is not very meaningful
+
+What if I accidentally reverse the order?
+
+var person2= ["travis", "los angeles", 21]
+
+
+THis is a perfect usecase for an OBJECT
+
+var person = {
+	name: "Cindy",
+	age: 32,
+	city: "Missoula"
+};
+
+- every item in the object is a key-value pair
+- unlike arrays, objects have no order
+
+
+OBJECTS: RETRIEVING DATA:
+2 choices: 
+
+Braket: 
+console.log(person["name]);
+
+you can look up using a variable with bracket notation
+var str= name;
+someObject[str];
+someObject.str; --> doesn't work
+
+
+Dot notation: 
+console.log(person.name);
+you cannot use it if the property starts with a number, or if has spaces inbetween
+
+
+OBJECTS: UPDATING DATA
+
+person["age"] +=1;
+
+person.city="london";
+
+
+OBJECTS: CREATING OBJECTS
+1. make an empty object and then add to it
+
+var person = {};
+
+person.name="travis";
+person.age=21;
+person.city="la";
+
+
+2. all at once
+
+var person = {
+	name: "travis",
+	age: 21,
+	city: "la"
+};
+
+
+3. another way of initializing an object
+
+var person = new Object();
+
+person.name="travis";
+person.age=21;
+person.city="la";
+
+
+
+NESTED OBJECTS OR ARRAYS
+var posts = [
+	{
+	  title: "cats are mediocre",
+	  author: "colt",
+	  comments: ["awesome post", "terrible post"]
+	},
+
+	{
+	  title: "cats are awesome",
+	  author: "cat lover",
+	  comments: [">3", "shut up"]
+	}
+
+]
+
+posts[0].title // cats are mediocre
+posts[1].comments[1] // shut up
+
+
+
+JS METHODS
+A method is just a function that is a property inside an object
+var obj = {
+	name: "mar",
+	age: 40,
+	isCool: true,
+	add: function (x,y){
+		return x+y;
+		}
+}
+
+obj.add(5,3);		// 8
+
+
+ie. console.log()
+console is an object and log is a method inside that object
+
+ADDING METHODS TO OBJECTS
+i.e.
+function speak(){
+	return "WOOF";
+	}
+
+function speak(){
+	return "MEOW";
+	}
+
+we have namspace collision!!! So the solution is;
+
+var dogSpace = {};
+dogSpace.speak = function() {
+	return "WOOF";
+	};
+
+var catSpace = {};
+catSpace.speak = function() {
+	return "MEOW";
+	};
+
+dogSpace.speak();  // WOOF
+catSpace.speak();  // MEOW
+
+
+
+
+NAMESPACING
+To avoid namespace collision (functions with the same names)
+
+
+
+
+
+UNDERSCORE JS LIBRARY
+Underscore JS is a library that provides useful functional programming helpers without extending any built-in objects.
+Functional helpers: map, filter, invoke, creating indexes, js templating, function binding...
+
+Test Suit is included.
+
+you call it with   _.   :
+
+var flat = _.find([1,2])
+
+
+
+THE KEYWORD <<THIS>>
+this: inside a method it refers to the OBJECT that the method is defining
+
+var comments = {};
+comments.data = ["dd", "jksjdf", "jfks"];
+
+
+OPTION 1:
+function print(arr){
+	arr.forEach(function(el){
+		console.log(el);
+	});
+}
+
+OPTION 2:
+comments.print = function() {
+	this.data.forEach(function(el){   //this refers to comments
+	console.log(el);
+	});
+}
+
+
+
+
+

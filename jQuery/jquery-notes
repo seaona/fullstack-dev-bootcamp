@@ -1,0 +1,144 @@
+JQUERY
+It's a DOM manipulation library.
+	- select elements
+	- manipulate elements
+	- create elements
+	- add event listeners
+	- animate elements
+	- add effects
+	- make http requests (AJAX)
+
+
+WHY USE JQUERY
+- fixes "broken" DOM API
+- brevity and clarity
+- ease of use
+- cross-browser support
+- ajax
+
+
+WHY NOT USE JQUERY
+youmightnotneedjquery.com
+- the DOM API is no longer broken
+- it doesn't do anything you can do on your own
+- it's an unnecessary dependency
+- performance
+
+VANILLA JS: It's just writting Javascript WITHOUT jQuery
+
+ADDING JQUERY
+download jQuery and link it locally
+compressed version (minimized version) or uncompressed
+
+link to a CDN (a hosted copy)
+Content Distributed  Network
+
+
+
+JQUERY SELECTORS
+$("selectorGoesHere") it's the same as querySelectorAll, in that we provide a CSS style selector and jQuery will return all matching elements
+
+$  is a function
+
+function(selector, context){}
+it returns a list
+
+//select all img tags
+$("img")
+
+//select all elements with class sale
+$(".sale")
+
+//select element with id bonus
+$("#bonus")
+
+//select all a tags inside li's
+$("li a")
+
+
+METHOD .CSS
+$(selector).css(property, value)
+
+$("#special").css("color", "yellow")
+the same as:
+document.querySelector("h1").style.color = "orange";
+
+we can also define our styles in an object
+
+var styles = {
+	backgroundColor: "pink",
+	fontWeight: "bold"
+};
+
+$("#special").css(styles);
+
+We can also style multiple elements at once
+//select all li's
+$("li").css("color", "yellow");
+
+the same as:
+var lis = document.querySelectorAll("li");
+for (var i=0; i < lis.length; i++){
+	lis[i].style.color = "yellow";
+}
+
+or passs directly an object with sytles
+
+$("li").css({
+fontSize: "10px",
+border: "3px solid red",
+background: "purple"
+
+})
+
+
+change only the first div:
+$("div:first-of-type").css("color", "pink");
+
+COMMONM JQUERY METHODS
+- val()
+get the current value of the first element in the set of matched elements or set the value of every matched element
+$("input").val("mariona") -->we pass th value mariona
+ 
+
+- text()
+it returns the content of sth
+$("h1").text("change h1text!")
+
+- attr()
+get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element
+<img id="photo" src="brusch.jpg" alt="brush seller">
+
+Getter: we receive the value of the attribute:
+$("img").attr("src")
+
+
+Setter: we change the value of an attribute:
+$("img").attr("src", "xxx,jpg")
+
+
+or
+$("#photo).attr({
+	alt: "beijing seller",
+	title: "photo of beijing"
+});
+
+
+from alist of several images, if i want to change the first:
+$("img:first-of-type").css("", "")
+last one:
+$("img").last().css("", "")
+all
+$("img").css("", "")
+
+
+- html()
+$("ul").html("<li>jj</li><li>hjkj</li>")
+it gives the inner htmnl, not only the text
+
+
+- addClass()
+
+- removeClass()
+
+- toggleClass()

@@ -1,0 +1,36 @@
+BUILT IN METHODS IN JS
+---------------------------------------
+*alert("hello there");  
+it pops up a message
+---------------------------------------
+*prompt("what is your name");
+forgetting input from the user
+
+we can save the input in a variable:
+
+var userName=prompt("what's your name?");
+---------------------------------------
+*console.log("sss");
+---------------------------------------
+*clear()  it's a method for cleaning the console
+---------------------------------------
+
+
+
+FUNCIONS UTILS JS
+---------------------------------------
+INDEXOF("targetWord") 
+
+aquesta funcio ens diu si un string conte un aparaula. si la conté ens diu el numero de posiciod'inici, si no ens retorna -1
+
+
+var result=answer.indexOf("yes")
+---------------------------------------
+word.LENGTH
+
+aquesta funcion ens retorna la llargada duna paraula
+"hello".length 
+---------------------------------------
+
+
+

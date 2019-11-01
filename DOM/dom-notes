@@ -1,0 +1,248 @@
+INTRO TO THE DOM
+Document Object Model: the DOM is the interface between your JS and HTML + CSS
+
+The browser turns every HTML tag into a JS object that we can manippulate.
+Everything is stored inside of the document object.
+
+console.dir(document);   //it will print all the DOM
+
+
+THE PROCESS
+SELECT an element and then MANIPULATE
+
+
+var h1 = document.querySelector("h1");	//select <h1>
+
+h1.style.color= "pink"; 	// style property and we change color property inside style
+
+
+document.URL
+document.body
+document.head
+
+
+
+IMPORTANT SELECTOR METHODS
+
+document.getElementById()
+
+document.getElementByClassName()
+
+document.getElementsByTagName()
+
+document.querySelector()
+
+document.querySelectorAll()
+
+
+
+DOM MANIPULATION
+CHANGING AN ELEMENT'S STYLE
+The STYLE property is one way to manipulate an element's style.
+
+
+var tag = document.getElementById("highlight");
+
+tag.style.color = "blue";
+tag.style.border = "10px solid red";
+tag.style.fontSize = "70px";
+tag.style.background = "yellow";
+tag.style.marginTop = "200px";
+
+
+//it's not very DRY code.
+Separation of Concerns: it is recommended for styles to be defined in a separate file or files. The style property allows for quick styling.
+In that case, we should give tag another class, i.e. itsHighglighted, and then on the CSS style the class. So in JS we only have 1 line of code.
+
+//ALTERNATIVE
+
+//define a class in CSS
+.some-class {
+	color: blue;
+	border: 10px solid red;
+}
+
+//select the element
+var tag = document.getElementByID("highlight");
+
+//add the new clas to the selected element
+tag.classList.add("some-class");
+
+
+
+ADDING/REMOVING CLASSES
+classList: a read-only list that contains the classes for a given element. It's NOT an array.
+
+var tag = document.querySelector("h1");
+
+//add a class to the selected element
+tag.clasSList.add("another-class");
+
+//remove a class
+tag.classList.remove("another-class");
+
+//toggle a class: if the element has that class it will remove it. If not, turn it on
+tag.classList.toggle("another-class");
+
+
+
+
+CHANGING THE CONTENT OF A TAG
+textContent: returns a strnig of all the text contained in a given element
+
+<p>this is an <strong> awesome</strong> paragraph</p>
+
+var tag = document.querySelector("p");
+
+tag.textContent  //"this is an awesome paragraph"
+
+tag.textContent = "blah blah"  //we change now the text content
+
+
+
+
+innerHTML: similar to textContent, except it returns a string of all the HTML contained in a given element
+
+tag.innerHTML  /// "This is an <strong>awesome</strong> paragraph"
+
+
+
+
+tag.textContent = "<h1>goobye</h1>"   // text content is not going to treat h1 as html
+tag.innerHTML = "<h1>goobye</h1>" //innerHTML treats h1 as html
+
+
+CHANGING ATTRIBUTES (SRC, HREF, ETC.)
+getAttribute() and setAttribute() to read and write attributes like src or href.
+
+setAttribute() only works for individual elements
+
+<a href="www.google.com">I am a link </a>
+<img src="logo.png">
+
+var link = document.querySelector("a");
+
+link.getAttribute("href");	//wwww.google.com
+link.setAttribute("href", "www.dogs.com");
+
+var img = document.querySelector("img");
+img.setAttribute("src", "corgi.png");
+
+
+*in google, change src for srcset
+
+
+EXAMPLE: GET GOOGLE LINKS AND CHANGE THEM
+var links = document.getElementsByTagName("a");
+
+for(var i=0; i<links.length; i++){
+console.log(links[i].textContent);  ///show all the text
+}
+
+for(var i=0; i<links.length; i++){
+links[i].style.background="pink";   ///change style
+}
+
+for(var i=0; i<links.length; i++){
+console.log(links[i].getAttribute=("href"); ///for showing all text
+}
+
+for(var i=0; i<links.length; i++){
+links[i].setAttribute=("href", );
+}
+
+
+DOM Events
+Making things interactive. Events are everywhere:
+	- clicking on a button
+	- hovering over a link
+	- dragging and dropping
+	- pressing the enter key
+
+
+The process: we select an element and then add an EVENT LISTENER
+
+"listen for a click on this <button>"
+"listen for a hover event on the <h1>"
+"listen for a keypress event on the text input"
+
+The syntax: we use a method called addEventListener
+
+element.addEventListener(type, functionToCall); 
+
+var button = document.querySelector("button");
+button addEventListener("click", function() {
+	console.log("Someone clicked the button");
+});
+
+OR:
+
+button addEventListener("click", alertMessage);
+
+//here it goes WITHOUT PARENTHESIS. OTHERWISE WWE WOUDL EXECUTE IT AT THE BEGINING OF LOADING THE PAGE. IF WE NEED TO PASS A PARAMETER WE SHOULD USE AN ANONIMOUS FUNCTION AND NEST INSIDE A CALLBACK FUNCTION
+
+//we declare the function
+function alertMessage(message){
+	console.log(message);
+}
+
+button addEventListener("click", function(){
+	alertMessage("hello");
+}
+
+
+
+
+
+
+
+
+debugger
+
+MOUSEOVER/MOUSEOUT
+
+mouseover: when mouse is over a component
+mouseout: when the mouse is out a component
+
+
+
+MDN EVENT REFERENCE
+https://developer.mozilla.org/es/docs/Web/Events
+
+
+
+HOW MANY EVENTS ARE?
+1. open console
+2. document.querySelectorAll("table"); // check if all the tables are related to events
+3. select all the tables rows and count the lengt:
+
+var numberEvents = document.querySelectorAll("tr");
+var numberTables=document.querySelectorAll("table"); //we will substract the firts row
+
+console.log(numberEvents.length - numberTables.length););
+
+
+NEW NOMENCLATURE: TERNARY OPERATOR: condition ? IDoThat: elseIDoThat
+if(this.textContent==="Easy"){
+	numSquares=3;
+}
+else{
+	numSquares=6;
+}
+
+//the same as:
+this.textContent==="Easy" ? numSquares=3: numSquares =6;
+	CONDITION      THEN     XXX     ELSE   XX
+
+
+STRUCTURE CODE: the most common way is to structure it into OBJECTS, and not having functions or variables floating around. It would be
+
+var = game {}
+
+game.init = function(){
+	setUpMode();
+	setupSquares();
+	reset();
+}
+
+game.init();

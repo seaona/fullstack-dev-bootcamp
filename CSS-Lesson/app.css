@@ -1,0 +1,20 @@
+h1{
+	color:#2fcc69;
+	/*border-color: purple;
+	border-width: 5px;
+	border-style: solid;*/
+
+	border: 5px solid purple;
+}
+
+h4{
+	background: rgb(255,100,80);
+}
+
+body{
+	background: pink;
+	/*background: url(https://previews.123rf.com/images/tunedin123/tunedin1231509/tunedin123150900099/44644003-wooden-background-olive-wood-wood-grain.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+

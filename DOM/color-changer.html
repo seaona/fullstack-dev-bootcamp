@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Changer through DOM</title>
+	<script type="text/javascript" src="color-changer.js"></script>
+	<style type="text/css">
+		.purple{
+			background: purple;
+		}
+	</style>
+</head>
+<body>
+	<button>Click me</button>
+
+	<script type="text/javascript">
+	var button  = document.querySelector("button");
+
+	button.addEventListener("click", function(){
+		document.body.classList.toggle("purple"); // if body doesnt have the class name it will add it. If it does, it will remove it
+	})
+	/*var isPurple = false;
+	button.addEventListener("click", function(){
+		if(isPurple){
+			document.body.style.background="white";
+		}
+		else{
+			document.body.style.background="purple";
+		}
+		isPurple= !isPurple;
+		
+});*/
+
+</script>
+</body>
+</html>
