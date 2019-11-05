@@ -11,5 +11,6 @@
   "dependencies": {
     "cat-me": "^1.0.3",
     "faker": "^4.1.0"
-  }
+  },
+  "devDependencies": {}
 }
