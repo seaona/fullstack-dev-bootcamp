@@ -18,6 +18,20 @@ app.get("/dog", function(req,res){
     res.send("meow I've changed something fgd");
 });
 
+app.get("/r/:subredditName", function(req,res){
+    var subreddit = req.params.subredditName;
+    res.send("Welcome to "+ subreddit.toUpperCase() + " Subreddit");
+
+});
+
+app.get("/r/:subreddit/comments/:id/:title", function(req,res){
+    res.send("welcome to post xxx");
+});
+
+app.get("*", function(req,res){
+    res.send("you are a star");
+});
+
 //tell Express to listen for requests (start server)
 app.listen(3000, function(){
     console.log("server has started");
