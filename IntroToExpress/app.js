@@ -6,7 +6,7 @@ var app= express();
 
 // "/" => "Hi there!!"
 app.get("/", function(req,res){
-    res.send("hi there");
+    res.send("hi there dgdsfg");
 });
 // "/bye" => "Goodbye"
 app.get("/bye", function(req,res){
@@ -15,7 +15,7 @@ app.get("/bye", function(req,res){
 // "/dog" => "MEOW"
 app.get("/dog", function(req,res){
     console.log("someone made a request")
-    res.send("meow");
+    res.send("meow I've changed something fgd");
 });
 
 //tell Express to listen for requests (start server)
