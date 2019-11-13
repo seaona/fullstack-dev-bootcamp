@@ -10,25 +10,22 @@ app.get("/", function(req,res){
 
 //animals pages
 app.get("/speak/:animal", function(req,res){
-    var animal = req.params.animal;
+    //dictionary
+    var sounds = {
+        pig: "Oink",
+        cow: "Moo",
+        dog: "Woof Woof"
+    };
+    var animal = req.params.animal.toLowerCase(); //we want to take both Dog and dog
+    var sound = sounds[animal];
 
-    if(animal=="pig"){
-        res.send("The pig says 'Oink'");
-    }
-
-    else if (animal=="cow"){
-        res.send("The cow says 'Moo'");
-    }
-
-    else if (animal=="dog"){
-        res.send("The dog says 'Woof Woof'");
-    }  
+    res.send("The " + animal + " says " + sound);  
 });
 
 //repeating params
 app.get("/repeat/:word/:times", function(req,res){
     var word = req.params.word;
-    var times = req.params.times;
+    var times = Number(req.params.times); //we transform a string to a number
     var response="";
 
     for(var i = 0; i<times; i++){
