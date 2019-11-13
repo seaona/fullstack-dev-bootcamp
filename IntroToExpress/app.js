@@ -6,7 +6,7 @@ var app= express();
 
 // "/" => "Hi there!!"
 app.get("/", function(req,res){
-    res.send("hi there dgdsfg");
+    res.send("hi there");
 });
 // "/bye" => "Goodbye"
 app.get("/bye", function(req,res){
@@ -28,6 +28,7 @@ app.get("/r/:subreddit/comments/:id/:title", function(req,res){
     res.send("welcome to post xxx");
 });
 
+//if non of the links above are called, then the rest are called with a *
 app.get("*", function(req,res){
     res.send("you are a star");
 });
