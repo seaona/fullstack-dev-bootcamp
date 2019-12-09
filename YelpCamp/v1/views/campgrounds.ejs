@@ -1,0 +1,14 @@
+<%- include ("partials/header") %>
+
+<h1>This is the Campgrounds page</h1>
+
+<a href="/campgrounds/new">Add New Campground</a>
+
+<% campgrounds.forEach(function(campground){%>
+    <div>
+        <h4><%= campground.name %></h4>
+        <img src="<%= campground.image %>"> <!--we need to put quotes around it, because when data is passed from app.js data is added as text-->
+    </div>
+<% }); %>
+
+<%- include ("partials/footer") %>
