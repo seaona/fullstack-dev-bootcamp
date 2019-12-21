@@ -23,7 +23,7 @@ app.get("/campgrounds", function(req,res){
 });
 
 app.post("/campgrounds", function(req,res){ //restful convention. This route and the above have the same name, but they are different routes, because the above it's a get, and this is a post
-    //get data from form and add to campgrounds array
+    //get data from form and add to campgrounds array defined on top
     var name= req.body.name;
     var image= req.body.image;
     var newCampground= {name: name, image: image};
@@ -35,6 +35,7 @@ app.post("/campgrounds", function(req,res){ //restful convention. This route and
 
 app.get("/campgrounds/new", function(req,res){ //this is another Restful convention
     res.render("new");
+    
 });
 
 //STARTING THE SERVER
@@ -42,3 +43,4 @@ app.listen(3000, function(){
     console.log("YelpCamp Server has started");
 });
 
+//ENDING SERVER
