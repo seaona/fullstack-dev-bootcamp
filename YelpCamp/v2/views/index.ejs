@@ -10,9 +10,7 @@
         </div>    
     </header>
     <div class="row text-center" style="display:flex; flex-wrap:wrap;">
-        <div class="col-lg12">
-            <h3>Our Most Popular CampGrounds</h3>
-        </div>
+
         <% campgrounds.forEach(function(campground){%>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
@@ -20,6 +18,9 @@
                     <div class="caption">
                             <h4><%= campground.name %></h4>
                     </div>
+                    <p>
+                        <a href="/campgrounds/<%= campground._id%>" class="btn btn-primary">More Info</a>
+                    </p>
                 </div>             
             </div>
         <% }); %>

@@ -11,14 +11,16 @@ mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, u
 //Schema Setup
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
 /*Campground.create({
     name: "Granite Hill",
-    image: "https://thefinanser.com/wp-content/uploads/2019/03/Camp.jpg"
+    image: "https://thefinanser.com/wp-content/uploads/2019/03/Camp.jpg",
+    description: "This is a huge granite hill, no bathrooms. No water. Beautiful granite!"
 }, function(err, campground){
     if(err){
         console.log(err);
@@ -41,7 +43,7 @@ app.get("/campgrounds", function(req,res){
         if(err){
             console.log(err);
         } else {
-            res.render("campgrounds", {campgrounds: allCampgrounds}); 
+            res.render("index", {campgrounds: allCampgrounds}); 
             //
             //to campgrounds.ejs we will pass the data from db
         }
@@ -53,7 +55,8 @@ app.post("/campgrounds", function(req,res){ //restful convention. This route and
     //get data from form and add to campgrounds array defined on top
     var name= req.body.name;
     var image= req.body.image;
-    var newCampground= {name: name, image: image};
+    var desc = req.body.description;
+    var newCampground= {name: name, image: image, description: desc};
     
     //create a new campground and save it to the DB
     Campground.create(newCampground, function(err, newlyCreated){
@@ -73,13 +76,20 @@ app.get("/campgrounds/new", function(req,res){ //this is another Restful convent
 });
 
 
-//SHOW show a specific campground
+//SHOW show more info about a specific campground
 app.get("/campgrounds/:id", function(req, res){ //this is for any url following campgrounds/anything. That's why we need to put it after NEw
     //find the campground with the provided id
-
-    //render show template with that campground
-    res.send("This will be the show page one day");
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err){
+            console.log(err);
+        } else {
+            //render show template with that campground
+            res.render("show", {campground: foundCampground});
+        }
+    });
 });
+
+
 
 //STARTING THE SERVER
 app.listen(3000, function(){
