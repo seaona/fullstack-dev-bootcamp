@@ -6,24 +6,13 @@ var Campground = require("./models/campground");
 var seedDB = require("./seeds");
 
 
-seedDB(); //we call the function that we export within seeds.js
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
+seedDB(); //we call the function that we export within seeds.js
 
 
-/*Campground.create({
-    name: "Granite Hill",
-    image: "https://thefinanser.com/wp-content/uploads/2019/03/Camp.jpg",
-    description: "This is a huge granite hill, no bathrooms. No water. Beautiful granite!"
-}, function(err, campground){
-    if(err){
-        console.log(err);
-    } else{
-        console.log("Newly created campground: ");
-        console.log(campground);
-    }
-});*/
 
 
 //ROUTES
@@ -74,10 +63,11 @@ app.get("/campgrounds/new", function(req,res){ //this is another Restful convent
 //SHOW show more info about a specific campground
 app.get("/campgrounds/:id", function(req, res){ //this is for any url following campgrounds/anything. That's why we need to put it after NEw
     //find the campground with the provided id
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err){
             console.log(err);
         } else {
+            console.log(foundCampground);
             //render show template with that campground
             res.render("show", {campground: foundCampground});
         }

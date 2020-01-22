@@ -13,7 +13,7 @@ var data = [
 
     {name:"Canyon Floor", 
     image: "https://www.gore-tex.com/sites/default/files/blog_images/beach-camping.jpg",
-    description: "blah blah blah" },
+    description: "blah blah blah" }
 ]
 
 function seedDB(){
@@ -23,7 +23,14 @@ function seedDB(){
             console.log(err);
         } else {
             console.log("removed campgrounds");
-                //add a few campgrounds
+            Comment.remove({}, function(err){
+                if(err){
+                    console.log(err);
+                } else{
+                    console.log("Removed comments");
+                }
+            });
+            //add a few campgrounds
             data.forEach(function(seed){
                 Campground.create(seed, function(err, campground){
                     if(err){
