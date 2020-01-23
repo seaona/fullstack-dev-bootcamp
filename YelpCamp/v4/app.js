@@ -3,15 +3,14 @@ var app = express();
 var bodyParser=require("body-parser");
 var mongoose = require("mongoose");
 var Campground = require("./models/campground");
+var Comment = require("./models/comment");
 var seedDB = require("./seeds");
-
 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
 seedDB(); //we call the function that we export within seeds.js
-
 
 
 
@@ -88,6 +87,30 @@ app.get("/campgrounds/:id/comments/new", function(req,res){
             res.render("comments/new", {campground: campground});
         }
     }); 
+});
+
+app.post("/campgrounds/:id/comments", function(req,res){
+    //lookup campground using ID
+    Campground.findById(req.params.id, function(err, campground){
+        if(err){
+            console.log(err);
+            res.redirect("/campgrounds");
+        } else {
+            //create a new comment and save it to the DB
+            Comment.create(req.body.comment, function(err, comment){
+                if(err){
+                    console.log(err);
+                } else {
+                    //connect new comment to campground
+                    campground.comments.push(comment);
+                    campground.save();
+
+                    //redirect to campground show page
+                    res.redirect("/campgrounds/" + campground._id);
+                }
+            });          
+        }
+    });
 });
 
 
