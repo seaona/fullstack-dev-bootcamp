@@ -27,7 +27,7 @@ app.get("/campgrounds", function(req,res){
         if(err){
             console.log(err);
         } else {
-            res.render("index", {campgrounds: allCampgrounds}); 
+            res.render("campgrounds/index", {campgrounds: allCampgrounds}); 
             //
             //to campgrounds.ejs we will pass the data from db
         }
@@ -55,7 +55,7 @@ app.post("/campgrounds", function(req,res){ //restful convention. This route and
 
 //NEW show form to create a new campground
 app.get("/campgrounds/new", function(req,res){ //this is another Restful convention
-    res.render("new");
+    res.render("campgrounds/new");
     
 });
 
@@ -69,7 +69,7 @@ app.get("/campgrounds/:id", function(req, res){ //this is for any url following 
         } else {
             console.log(foundCampground);
             //render show template with that campground
-            res.render("show", {campground: foundCampground});
+            res.render("campgrounds/show", {campground: foundCampground});
         }
     });
 });
@@ -80,8 +80,14 @@ app.get("/campgrounds/:id", function(req, res){ //this is for any url following 
 //=====================================
 
 app.get("/campgrounds/:id/comments/new", function(req,res){
-    res.send("");
-    
+    //find campground by id
+    Campground.findById(req.params.id, function(err, campground){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("comments/new", {campground: campground});
+        }
+    }); 
 });
 
 
