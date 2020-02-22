@@ -38,7 +38,8 @@ app.get("/", function(req,res){
     res.render("home");
 });
 
-app.get("/secret", function(req,res){
+//when a request comes in, is going to run isLoggedIn before anything else
+app.get("/secret", isLoggedIn, function(req,res){
     res.render("secret");
 });
 
@@ -77,9 +78,22 @@ app.get("/login", function(req,res){
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/secret",
     failureRedirect: "/login"
-}), function(req,res){
-    
+}), function(req,res){ 
 });
+
+//logout: passport is destroying all the user data from the session
+app.get("/logout", function(req,res){
+    req.logout();
+    res.redirect("/");
+});
+
+//this is a standard for the middleware. Next, is the next thing it needs to be called
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+};
 
 app.listen(3000, function(){
     console.log("Server started");
