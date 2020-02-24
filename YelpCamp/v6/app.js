@@ -96,7 +96,7 @@ app.get("/campgrounds/:id", function(req, res){ //this is for any url following 
 //COMMENTS ROUTES
 //=====================================
 
-app.get("/campgrounds/:id/comments/new", function(req,res){
+app.get("/campgrounds/:id/comments/new", isLoggedIn, function(req,res){
     //find campground by id
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -107,7 +107,7 @@ app.get("/campgrounds/:id/comments/new", function(req,res){
     }); 
 });
 
-app.post("/campgrounds/:id/comments", function(req,res){
+app.post("/campgrounds/:id/comments", isLoggedIn, function(req,res){
     //lookup campground using ID
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -165,8 +165,20 @@ app.post("/login", passport.authenticate("local",
     successRedirect: "/campgrounds",
     failureRedirect: "/login"
 }), function(req,res){
-
 });
+
+//logout route
+app.get("/logout", function(req,res){
+    req.logout(); //it comes from the packages we have installed
+    res.redirect("/campgrounds");
+});
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+};
 
 //STARTING THE SERVER
 app.listen(3000, function(){
