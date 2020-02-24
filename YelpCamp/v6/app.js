@@ -17,6 +17,20 @@ mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, u
 seedDB(); //we call the function that we export within seeds.js
 
 
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate())); //this comes with the passport local mongoose we added to user
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 
 //ROUTES
 app.get("/", function(req,res){
@@ -116,6 +130,30 @@ app.post("/campgrounds/:id/comments", function(req,res){
         }
     });
 });
+
+// ============
+//AUTH ROUTES
+// ============
+
+//show register form
+app.get("/register", function(req,res){
+    res.render("register");
+});
+
+//handle sing up logic
+app.post("/register", function(req,res){
+    var newUser = new User({username:req.body.username}); 
+    User.register(newUser, req.body.password, function(err,user){
+        if(err){
+            console.log(err);
+            return res.render("register");
+        }
+        passport.authenticate("local")(req,res, function(){
+            res.redirect("/campgrounds");
+        });
+    });
+});
+
 
 
 //STARTING THE SERVER
