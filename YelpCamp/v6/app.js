@@ -154,7 +154,19 @@ app.post("/register", function(req,res){
     });
 });
 
+//show log in form
+app.get("/login", function(req,res){
+    res.render("login");
+});
 
+//handling login logic
+app.post("/login", passport.authenticate("local", 
+{
+    successRedirect: "/campgrounds",
+    failureRedirect: "/login"
+}), function(req,res){
+
+});
 
 //STARTING THE SERVER
 app.listen(3000, function(){
