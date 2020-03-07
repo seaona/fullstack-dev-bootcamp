@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public")); //__dirname is the directory where this script lives in
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
-seedDB(); //we call the function that we export within seeds.js
+//seedDB(); //we call the function that we export within seeds.js
 
 
 // PASSPORT CONFIGURATION

@@ -31,7 +31,7 @@ function seedDB(){
                 }
             });
             //add a few campgrounds
-            data.forEach(function(seed){
+            /*data.forEach(function(seed){
                 Campground.create(seed, function(err, campground){
                     if(err){
                         console.log(err);
@@ -54,7 +54,7 @@ function seedDB(){
                             });
                     }
                 });
-            });
+            });*/
         }  
     });
 
