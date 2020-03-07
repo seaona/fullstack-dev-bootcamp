@@ -30,7 +30,12 @@ passport.use(new LocalStrategy(User.authenticate())); //this comes with the pass
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
+//we add a middleware function for passing the current user to every template
+//this will run in the middle of all routes
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user; //whatever we put on res.locals is what's available inisde the template
+    next(); //in order to move on to the next function
+});
 
 //ROUTES
 app.get("/", function(req,res){
