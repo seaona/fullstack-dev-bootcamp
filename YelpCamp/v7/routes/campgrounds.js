@@ -17,12 +17,16 @@ router.get("/", function(req,res){
 });
 
 //CREATE Add new campground db
-router.post("/s", function(req,res){ //restful convention. This route and the above have the same name, but they are different routes, because the above it's a get, and this is a post
+router.post("/", isLoggedIn, function(req,res){ //restful convention. This route and the above have the same name, but they are different routes, because the above it's a get, and this is a post
     //get data from form and add to campgrounds array defined on top
     var name= req.body.name;
     var image= req.body.image;
     var desc = req.body.description;
-    var newCampground= {name: name, image: image, description: desc};
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
+    var newCampground= {name: name, image: image, description: desc, author: author};
     
     //create a new campground and save it to the DB
     Campground.create(newCampground, function(err, newlyCreated){
@@ -36,7 +40,7 @@ router.post("/s", function(req,res){ //restful convention. This route and the ab
 });
 
 //NEW show form to create a new campground
-router.get("/new", function(req,res){ //this is another Restful convention
+router.get("/new", isLoggedIn, function(req,res){ //this is another Restful convention
     res.render("campgrounds/new");
     
 });
@@ -56,5 +60,12 @@ router.get("/:id", function(req, res){ //this is for any url following campgroun
     });
 });
 
+//middleware
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+};
 
 module.exports = router;
