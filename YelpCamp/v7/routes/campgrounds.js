@@ -61,18 +61,14 @@ router.get("/:id", function(req, res){ //this is for any url following campgroun
 });
 
 //EDIT CAMPGROUND ROUTE
-router.get("/:id/edit", function(req,res){
-    Campground.findById(req.params.id, function(err, foundCampground){
-        if(err){
-            res.redirect("/campgrounds");
-        } else {
-            res.render("campgrounds/edit", {campground: foundCampground});
-        }
-    }) 
+router.get("/:id/edit", checkCampgroundOwnership, function(req,res){
+        Campground.findById(req.params.id, function(err, foundCampground){
+                    res.render("campgrounds/edit", {campground: foundCampground});
+        });
 });
 
 //UPDATE CAMPGROUND ROUTE
-router.put("/:id", function(req,res){
+router.put("/:id", checkCampgroundOwnership, function(req,res){
     //find and update the correct campground
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
         if(err){
@@ -85,7 +81,7 @@ router.put("/:id", function(req,res){
 })
 
 //DESTROY CAMPGROUND ROUTE
-router.delete("/:id", function(req,res){
+router.delete("/:id", checkCampgroundOwnership, function(req,res){
     Campground.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/campgrounds");
@@ -102,6 +98,27 @@ function isLoggedIn(req, res, next){
         return next();
     }
     res.redirect("/login");
+};
+
+function checkCampgroundOwnership(req, res, next){
+    if(req.isAuthenticated()){
+        Campground.findById(req.params.id, function(err, foundCampground){
+            if(err){
+                res.redirect("back");
+            } else {
+                //does the user own the campground? 
+                //foundCampground.id is a mongoose object, campground.author.id is a string, that's why we use the method .equals
+                if(foundCampground.author.id.equals(req.user._id)){
+                    next();
+                } else {
+                    res.redirect("back"); //this will take the user to the previous page she was
+                }
+            }
+        });
+    //if not logged in, redirect
+    } else {
+        res.redirect("back");
+    }
 };
 
 module.exports = router;
