@@ -2,6 +2,7 @@ var express = require("express"),
     app = express(),
     bodyParser=require("body-parser"),
     mongoose = require("mongoose"),
+    flash = require("connect-flash"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
@@ -21,6 +22,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public")); //__dirname is the directory where this script lives in
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
 app.use(methodOverride("_method"));
+app.use(flash());
 //seedDB(); //we call the function that we export within seeds.js
 
 
@@ -41,6 +43,8 @@ passport.deserializeUser(User.deserializeUser());
 //this will run in the middle of all routes
 app.use(function(req, res, next){
     res.locals.currentUser = req.user; //whatever we put on res.locals is what's available inisde the template
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next(); //in order to move on to the next function
 });
 
